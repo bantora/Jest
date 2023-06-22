@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function App() {
   const [buttonColor, setButtonColor] = useState("red");
+  const [checkBox, setCheckBox] = useState(false);
 
   const newButtonColor = buttonColor === "red" ? "blue" : "red";
 
@@ -10,11 +11,24 @@ function App() {
     setButtonColor(newButtonColor);
   };
 
+  const handleChangeCB = () => {
+    setCheckBox(!checkBox);
+  };
+
   return (
     <div>
-      <button onClick={handleChange} style={{ backgroundColor: buttonColor }}>
+      <button
+        disabled={checkBox}
+        onClick={handleChange}
+        style={{ backgroundColor: buttonColor }}
+      >
         Change to {newButtonColor}
       </button>
+      <input
+        type='checkbox'
+        defaultChecked={checkBox}
+        onClick={handleChangeCB}
+      />
     </div>
   );
 }
