@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 
+export const stringManipulation = (color) => color.replace(/\B([A-Z])\B/g, ' $1')
+
 function App() {
   const [buttonColor, setButtonColor] = useState("red");
   const [checkBox, setCheckBox] = useState(false);

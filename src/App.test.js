@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import App from "./App";
+import App, { stringManipulation } from "./App";
 
 test("button initial color", () => {
   // const { container } =
@@ -55,4 +55,16 @@ test("code quiz 2", () => {
   expect(button).toHaveStyle({ backgroundColor: "gray" });
   fireEvent.click(checkbox);
   expect(button).toHaveStyle({ backgroundColor: "blue" });
+});
+
+describe("spaces before camel-case capital letters", () => {
+  test("Works for no inner capital letters", () => {
+    expect(stringManipulation("Red")).toBe("Red");
+  });
+  test("Works for one inner capital letters", () => {
+    expect(stringManipulation("MidnightBlue")).toBe("Midnight Blue");
+  });
+  test("Works for multiple inner capital letters", () => {
+    expect(stringManipulation("MidnightVioletRed")).toBe("Midnight Violet Red");
+  });
 });
