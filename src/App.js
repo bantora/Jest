@@ -20,7 +20,7 @@ function App() {
       <button
         disabled={checkBox}
         onClick={handleChange}
-        style={{ backgroundColor: buttonColor }}
+        style={{ backgroundColor: checkBox ? "gray" : buttonColor }}
       >
         Change to {newButtonColor}
       </button>

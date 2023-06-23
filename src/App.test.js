@@ -38,3 +38,21 @@ test("code quiz 1", () => {
   fireEvent.click(checkbox);
   expect(button).toBeEnabled();
 });
+
+test("code quiz 2", () => {
+  render(<App />);
+
+  const button = screen.getByRole("button");
+  const checkbox = screen.getByRole("checkbox");
+
+  fireEvent.click(checkbox);
+  expect(button).toHaveStyle({ backgroundColor: "gray" });
+  fireEvent.click(checkbox);
+  expect(button).toHaveStyle({ backgroundColor: "red" });
+  fireEvent.click(button);
+  expect(button).toHaveStyle({ backgroundColor: "blue" });
+  fireEvent.click(checkbox);
+  expect(button).toHaveStyle({ backgroundColor: "gray" });
+  fireEvent.click(checkbox);
+  expect(button).toHaveStyle({ backgroundColor: "blue" });
+});
