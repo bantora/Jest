@@ -5,21 +5,25 @@ test("button initial color", () => {
   // const { container } =
   render(<App />);
 
-  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to MidnightBlue",
+  });
 
-  expect(colorButton).toHaveStyle({ backgroundColor: "red" });
+  expect(colorButton).toHaveStyle({ backgroundColor: "MediumVioletRed" });
 
   fireEvent.click(colorButton);
 
-  expect(colorButton).toHaveStyle({ backgroundColor: "blue" });
+  expect(colorButton).toHaveStyle({ backgroundColor: "MidnightBlue" });
 
-  expect(colorButton).toHaveTextContent("Change to red");
+  expect(colorButton).toHaveTextContent("Change to MediumVioletRed");
 });
 
 test("initial conditions", () => {
   render(<App />);
 
-  const colorButton = screen.getByRole("button", { name: "Change to blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to MidnightBlue",
+  });
   expect(colorButton).toBeEnabled();
 
   const checkbox = screen.getByRole("checkbox");
@@ -48,13 +52,13 @@ test("code quiz 2", () => {
   fireEvent.click(checkbox);
   expect(button).toHaveStyle({ backgroundColor: "gray" });
   fireEvent.click(checkbox);
-  expect(button).toHaveStyle({ backgroundColor: "red" });
+  expect(button).toHaveStyle({ backgroundColor: "MediumVioletRed" });
   fireEvent.click(button);
-  expect(button).toHaveStyle({ backgroundColor: "blue" });
+  expect(button).toHaveStyle({ backgroundColor: "MidnightBlue" });
   fireEvent.click(checkbox);
   expect(button).toHaveStyle({ backgroundColor: "gray" });
   fireEvent.click(checkbox);
-  expect(button).toHaveStyle({ backgroundColor: "blue" });
+  expect(button).toHaveStyle({ backgroundColor: "MidnightBlue" });
 });
 
 describe("spaces before camel-case capital letters", () => {

@@ -1,13 +1,15 @@
 import "./App.css";
 import { useState } from "react";
 
-export const stringManipulation = (color) => color.replace(/\B([A-Z])\B/g, ' $1')
+export const stringManipulation = (color) =>
+  color.replace(/\B([A-Z])\B/g, " $1");
 
 function App() {
-  const [buttonColor, setButtonColor] = useState("red");
+  const [buttonColor, setButtonColor] = useState("MediumVioletRed");
   const [checkBox, setCheckBox] = useState(false);
 
-  const newButtonColor = buttonColor === "red" ? "blue" : "red";
+  const newButtonColor =
+    buttonColor === "MediumVioletRed" ? "MidnightBlue" : "MediumVioletRed";
 
   const handleChange = () => {
     setButtonColor(newButtonColor);
