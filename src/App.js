@@ -1,11 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import SummaryForm from './pages/summary/SummaryForm';
+import SummaryForm from "./pages/summary/SummaryForm";
+import Options from "./pages/entry/Options";
 
 function App() {
   return (
     <div className='App'>
       <SummaryForm />
+      <Options optionType='scoops' />
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         <p>
