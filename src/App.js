@@ -7,7 +7,7 @@ function App() {
   return (
     <div className='App'>
       <SummaryForm />
-      <Options optionType='scoops' />
+      <Options optionType='toppings' />
       <header className='App-header'>
         <img src={logo} className='App-logo' alt='logo' />
         <p>
