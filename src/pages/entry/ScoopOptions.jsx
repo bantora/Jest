@@ -1,7 +1,7 @@
 import { Form, Row, Col } from "react-bootstrap";
 import { useOrderDetails } from "../../context/OrderDetails";
 
-export default function ScoopOptions({ key, name, imagePath }) {
+export default function ScoopOptions({ name, imagePath }) {
   const { updateItemCount } = useOrderDetails();
   const handleChange = (e) => updateItemCount(name, +e.target.value, "scoops");
 
