@@ -1,28 +1,14 @@
-import logo from "./logo.svg";
-import "./App.css";
-import SummaryForm from "./pages/summary/SummaryForm";
-import Options from "./pages/entry/Options";
+import { Container } from "react-bootstrap";
+import OrderEntry from "./pages/entry/OrderEntry";
+import { OrderDetailsProvider } from "./context/OrderDetails";
 
 function App() {
   return (
-    <div className='App'>
-      <SummaryForm />
-      <Options optionType='toppings' />
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className='App-link'
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <OrderDetailsProvider>
+        <OrderEntry></OrderEntry>
+      </OrderDetailsProvider>
+    </Container>
   );
 }
 
