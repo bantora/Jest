@@ -1,13 +1,12 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../../test-utils/testing-library-utils";
 import userEvent from "@testing-library/user-event";
 import Options from "../Options";
-import { toHaveTextContent } from "@testing-library/jest-dom/matchers";
 
 test("update scoop subtotal when scoops change", async () => {
   const user = userEvent.setup();
   render(<Options optionType='scoops' />);
 
-  const scoopsSubtotal = screen.getByText("Scoops total $", { exact: false });
+  const scoopsSubtotal = screen.getByText("Scoops total: $", { exact: false });
   expect(scoopsSubtotal).toHaveTextContent("0.00");
 
   const vanillaInput = await screen.findByRole("spinbutton", {

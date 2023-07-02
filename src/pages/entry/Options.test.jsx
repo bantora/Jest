@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../../test-utils/testing-library-utils";
 
 import Options from "./Options";
 
@@ -19,6 +19,9 @@ test("toppings test", async () => {
   expect(scoopImages).toHaveLength(3);
 
   const altText = scoopImages.map((element) => element.alt);
-  expect(altText).toEqual(["Cherries topping", "M&Ms topping", "Hot fudge topping"]);
+  expect(altText).toEqual([
+    "Cherries topping",
+    "M&Ms topping",
+    "Hot fudge topping",
+  ]);
 });
- 
